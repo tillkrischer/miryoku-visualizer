@@ -1,76 +1,21 @@
 const Button = () => {
     return (
-        <div
-            style={{
-                height: '54px',
-                width: '54px',
-                borderWidth: '1px',
-                borderRadius: '5px',
-                backgroundColor: '#888888',
-                borderStyle: 'solid',
-                borderColor: '#000',
-                fontSize: '12px',
-                position: 'relative',
-                fontWeight: 'bold',
-            }}
-        >
-            <div
-                style={{
-                    top: '3px',
-                    left: '5px',
-                    height: '42px',
-                    width: '42px',
-                    borderWidth: '1px',
-                    borderRadius: '3px',
-                    backgroundColor: '#a7a7a7',
-                    borderStyle: 'solid',
-                    borderColor: 'rgba(0,0,0,0.3)',
-                    position: 'absolute',
-                }}
-            >
-                <div
-                    style={{
-                        left: '1px',
-                        top: '1px',
-                        position: 'absolute',
-                    }}
-                >
-                    Q
-                </div>
-                <div
-                    style={{
-                        right: '1px',
-                        top: '1px',
-                        position: 'absolute',
-                        color: '#5cfc45',
-                    }}
-                >
+        <div className='relative h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888] text-xs font-bold'>
+            <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]'>
+                <div className='absolute left-[1px] top-[1px]'>Q</div>
+                <div className='absolute right-[1px] top-[1px] text-green-600'>
                     {'{'}
                 </div>
-                <div
-                    style={{
-                        left: '1px',
-                        bottom: '1px',
-                        position: 'absolute',
-                        color: '#fd4526',
-                    }}
-                >
+                <div className='absolute bottom-[1px] left-[1px] text-red-600'>
                     {'F12'}
                 </div>
-                <div
-                    style={{
-                        right: '1px',
-                        bottom: '1px',
-                        position: 'absolute',
-                        color: '#4322fd',
-                    }}
-                >
+                <div className='absolute bottom-[1px] right-[1px] text-blue-600'>
                     {'['}
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 const App = () => {
     return (
@@ -79,7 +24,7 @@ const App = () => {
             <div className='h-4' />
             <Button />
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App
