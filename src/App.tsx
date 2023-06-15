@@ -1,54 +1,3 @@
-interface ButtonProps {
-  side: 'left' | 'right'
-  leftTop: string
-  rightTop: string
-  leftBottom: string
-  rightBottom: string
-  top: number
-  left: number
-  rotation: number
-}
-
-const Button = (props: ButtonProps) => {
-  const { side, leftTop, rightTop, leftBottom, rightBottom, top, left , rotation} = props
-
-  const colors =
-    side == 'left'
-      ? {
-          leftTop: 'text-[#000000]',
-          rightTop: 'text-[#5cfc45]',
-          leftBottom: 'text-[#fd4526]',
-          rightBottom: 'text-[#4322fd]',
-        }
-      : {}
-
-  return (
-    <div
-      className='absolute h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888] text-xs font-bold'
-      style={{ top, left, transform: `rotate(${rotation}deg)` }}
-    >
-      <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]'>
-        <div className={`absolute left-[1px] top-[1px] ${colors.leftTop}`}>
-          {leftTop}
-        </div>
-        <div className={`absolute right-[1px] top-[1px] ${colors.rightTop}`}>
-          {rightTop}
-        </div>
-        <div
-          className={`absolute bottom-[1px] left-[1px] ${colors.leftBottom}`}
-        >
-          {leftBottom}
-        </div>
-        <div
-          className={`absolute bottom-[1px] right-[1px] ${colors.rightBottom}`}
-        >
-          {rightBottom}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 // prettier-ignore
 const x = [
    40,  27,  20,  27,  33,
@@ -98,6 +47,57 @@ const nums = [
   '`', '1', '2', '3', '\\',
             '.', '0', '-'
 ]
+
+interface ButtonProps {
+  side: 'left' | 'right'
+  leftTop: string
+  rightTop: string
+  leftBottom: string
+  rightBottom: string
+  top: number
+  left: number
+  rotation: number
+}
+
+const Button = (props: ButtonProps) => {
+  const { side, leftTop, rightTop, leftBottom, rightBottom, top, left , rotation} = props
+
+  const colors =
+    side === 'left'
+      ? {
+        leftTop: 'text-[#000000]',
+        rightTop: 'text-[#5cfc45]',
+        leftBottom: 'text-[#fd4526]',
+        rightBottom: 'text-[#4322fd]',
+      }
+      : {}
+
+  return (
+    <div
+      className='absolute h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888] text-xs font-bold'
+      style={{ top, left, transform: `rotate(${rotation}deg)` }}
+    >
+      <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]'>
+        <div className={`absolute left-[1px] top-[1px] ${colors.leftTop}`}>
+          {leftTop}
+        </div>
+        <div className={`absolute right-[1px] top-[1px] ${colors.rightTop}`}>
+          {rightTop}
+        </div>
+        <div
+          className={`absolute bottom-[1px] left-[1px] ${colors.leftBottom}`}
+        >
+          {leftBottom}
+        </div>
+        <div
+          className={`absolute bottom-[1px] right-[1px] ${colors.rightBottom}`}
+        >
+          {rightBottom}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const App = () => {
   const indicies = [...Array(18).keys()]
