@@ -1,52 +1,52 @@
 // prettier-ignore
-const x = [
-   40,  27,  20,  27,  33,
-   94,  81,  74,  81,  87,
+const topPos = [
+  40, 27, 20, 27, 33,
+  94, 81, 74, 81, 87,
   148, 135, 128, 135, 141,
-            192, 202, 231
+  192, 202, 231
 ];
 // prettier-ignore
-const y = [
-  20, 74, 128, 182, 234,
-  20, 74, 128, 182, 234,
-  20, 74, 128, 182, 234,
-          150, 210, 263,
+const leftPos = [
+  20, 74, 128, 182, 236,
+  20, 74, 128, 182, 236,
+  20, 74, 128, 182, 236,
+  150, 210, 263
 ];
 // prettier-ignore
 const rotation = [
-  0, 0, 0,  0,  0,
-  0, 0, 0,  0,  0,
-  0, 0, 0,  0,  0,
-        0, 20, 40,
+  0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0,
+  0, 20, 40
 ];
 // prettier-ignore
 const alphas = [
-  "Q", "W", "E",   "R",   "T",
-  "A", "S", "D",   "F",   "G",
-  "Z", "X", "C",   "V",   "B",
-            "Esc", "Spc", "Tab"
+  "Q", "W", "E", "R", "T",
+  "A", "S", "D", "F", "G",
+  "Z", "X", "C", "V", "B",
+  "Esc", "Spc", "⭾"
 ];
 // prettier-ignore
 const symbols = [
-  '{', '&', '*', '(', '}',
-  ':', '$', '%', '^', '+',
-  '~', '!', '@', '#', '|',
-            '(', ')', '_'
-]
+  "{", "&", "*", "(", "}",
+  ":", "$", "%", "^", "+",
+  "~", "!", "@", "#", "|",
+  "(", ")", "_"
+];
 // prettier-ignore
 const functions = [
-  'F12', 'F7', 'F8',   'F9',  'PrtScr',
-  'F11', 'F4', 'F5',   'F6',  'ScrLo',
-  'F10', 'F1', 'F2',   'F3',  'Pause',
-               'Menu', 'Spc', 'Tab'
-]
+  "F12", "F7", "F8", "F9", "PrtScr",
+  "F11", "F4", "F5", "F6", "ScrLo",
+  "F10", "F1", "F2", "F3", "Pause",
+  "≡", "Spc", "⭾"
+];
 // prettier-ignore
 const nums = [
-  '[', '7', '8', '9', ']',
-  ';', '4', '5', '6', '=',
-  '`', '1', '2', '3', '\\',
-            '.', '0', '-'
-]
+  "[", "7", "8", "9", "]",
+  ";", "4", "5", "6", "=",
+  "`", "1", "2", "3", "\\",
+  ".", "0", "-"
+];
 
 interface ButtonProps {
   side: 'left' | 'right'
@@ -60,16 +60,25 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { side, leftTop, rightTop, leftBottom, rightBottom, top, left , rotation} = props
+  const {
+    side,
+    leftTop,
+    rightTop,
+    leftBottom,
+    rightBottom,
+    top,
+    left,
+    rotation,
+  } = props
 
   const colors =
     side === 'left'
       ? {
-        leftTop: 'text-[#000000]',
-        rightTop: 'text-[#5cfc45]',
-        leftBottom: 'text-[#fd4526]',
-        rightBottom: 'text-[#4322fd]',
-      }
+          leftTop: 'text-[#000000]',
+          rightTop: 'text-[#5cfc45]',
+          leftBottom: 'text-[#fd4526]',
+          rightBottom: 'text-[#4322fd]',
+        }
       : {}
 
   return (
@@ -110,8 +119,8 @@ const App = () => {
         {indicies.map((i) => (
           <Button
             key={i}
-            top={x[i]}
-            left={y[i]}
+            top={topPos[i]}
+            left={leftPos[i]}
             rotation={rotation[i]}
             side={i < 18 ? 'left' : 'right'}
             leftTop={alphas[i]}
