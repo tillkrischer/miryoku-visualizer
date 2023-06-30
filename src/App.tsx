@@ -1,3 +1,14 @@
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { useMemo, useState } from 'react'
+import { Label } from '@/components/ui/label'
+
 // prettier-ignore
 const yPosLeft = [
   40, 27, 20, 27, 33,
@@ -12,7 +23,7 @@ const yPosRight = [
   141, 135, 128, 135, 148,
   231, 202, 192
 ];
-const yPos = [...yPosLeft, ...yPosRight];
+const yPos = [...yPosLeft, ...yPosRight]
 // prettier-ignore
 const xPosLeft = [
   20, 74, 128, 182, 236,
@@ -27,7 +38,7 @@ const xPosRight = [
   380, 434, 488, 542, 596,
   353, 406, 466
 ];
-const xPos = [...xPosLeft, ...xPosRight];
+const xPos = [...xPosLeft, ...xPosRight]
 // prettier-ignore
 const rotationLeft = [
   0, 0, 0, 0, 0,
@@ -42,22 +53,36 @@ const rotationRight = [
   0, 0, 0, 0, 0,
   -40, -20, 0
 ];
-const rotation = [...rotationLeft, ...rotationRight];
+const rotation = [...rotationLeft, ...rotationRight]
+
 // prettier-ignore
-const alphasLeft = [
+const alphasQwertyLeft = [
   "Q", "W", "E", "R", "T",
   "A", "S", "D", "F", "G",
   "Z", "X", "C", "V", "B",
   "Esc", "Spc", "⭾"
 ];
 // prettier-ignore
-const alphasRight = [
+const alphasQwertyRight = [
   "Y", "U", "I", "O", "P",
   "H", "J", "K", "L", "'",
   "N", "M", ",", ".", "/",
   "↵", "⌫", "⌦"
 ];
-const alphas = [...alphasLeft, ...alphasRight];
+// prettier-ignore
+const alphasAzertyLeft = [
+  "A", "Z", "E", "R", "T",
+  "Q", "S", "D", "F", "G",
+  "W", "X", "C", "V", "B",
+  "Esc", "Spc", "⭾"
+];
+// prettier-ignore
+const alphasAzertyRight = [
+  "Y", "U", "I", "O", "P",
+  "H", "J", "K", "L", "M",
+  "N", ",", ".", "/", "'",
+  "↵", "⌫", "⌦"
+];
 // prettier-ignore
 const symbols = [
   "{", "&", "*", "(", "}",
@@ -72,7 +97,7 @@ const mouse = [
   "", "⇦", "⇧", "⇩", "⇨",
   "R", "L", "M"
 ];
-const layer2 = [...symbols, ...mouse];
+const layer2 = [...symbols, ...mouse]
 // prettier-ignore
 const functions = [
   "F12", "F7", "F8", "F9", "PrtScr",
@@ -87,7 +112,7 @@ const media = [
   "◯", "1", "2", "3", "4",
   "Stop", "Play", "Mut"
 ];
-const layer3 = [...functions, ...media];
+const layer3 = [...functions, ...media]
 // prettier-ignore
 const nums = [
   "[", "7", "8", "9", "]",
@@ -102,17 +127,17 @@ const navigation = [
   "Ins", "Home", "PgD", "PgU", "End",
   "↵", "⌫", "⌦"
 ];
-const layer4 = [...nums, ...navigation];
+const layer4 = [...nums, ...navigation]
 
 interface ButtonProps {
-  side: "left" | "right";
-  leftTop: string;
-  rightTop: string;
-  leftBottom: string;
-  rightBottom: string;
-  top: number;
-  left: number;
-  rotation: number;
+  side: 'left' | 'right'
+  leftTop: string
+  rightTop: string
+  leftBottom: string
+  rightBottom: string
+  top: number
+  left: number
+  rotation: number
 }
 
 const Button = (props: ButtonProps) => {
@@ -124,31 +149,30 @@ const Button = (props: ButtonProps) => {
     rightBottom,
     top,
     left,
-    rotation
-  } = props;
+    rotation,
+  } = props
 
   const colors =
-    side === "left"
+    side === 'left'
       ? {
-        leftTop: "text-[#000000]",
-        rightTop: "text-[#5cfc45]",
-        leftBottom: "text-[#fd4526]",
-        rightBottom: "text-[#4322fd]"
-      }
+          leftTop: 'text-[#000000]',
+          rightTop: 'text-[#5cfc45]',
+          leftBottom: 'text-[#fd4526]',
+          rightBottom: 'text-[#4322fd]',
+        }
       : {
-        leftTop: "text-[#000000]",
-        rightTop: "text-[#ffff1b]",
-        leftBottom: "text-[#ff4fff]",
-        rightBottom: "text-[#4bffff]"
-      };
+          leftTop: 'text-[#000000]',
+          rightTop: 'text-[#ffff1b]',
+          leftBottom: 'text-[#ff4fff]',
+          rightBottom: 'text-[#4bffff]',
+        }
 
   return (
     <div
-      className="absolute h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888] font-bold"
+      className='absolute h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888] font-bold'
       style={{ top, left, transform: `rotate(${rotation}deg)` }}
     >
-      <div
-        className="absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]">
+      <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]'>
         <div
           className={`absolute left-[1px] top-[1px] text-[0.75rem] ${colors.leftTop}`}
         >
@@ -171,25 +195,38 @@ const Button = (props: ButtonProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
+
+const alphaLayouts = ['azerty', 'qwerty']
 
 const App = () => {
-  const indicies = [...Array(36).keys()];
+  const [alphaLayout, setAlphaLayout] = useState<string>('qwerty')
+
+  const alphas = useMemo(() => {
+    switch (alphaLayout) {
+      case 'qwerty':
+        return [...alphasQwertyLeft, ...alphasQwertyRight]
+      case 'azerty':
+        return [...alphasAzertyLeft, ...alphasAzertyRight]
+      default:
+        return [...alphasQwertyLeft, ...alphasQwertyRight]
+    }
+  }, [alphaLayout])
 
   return (
-    <div className="App">
-      <div className="m-auto max-w-[650px] text-center">
-        <h1 className="text-3xl font-bold underline">Miryoku Visualizer</h1>
-        <div className="h-4" />
-        <div className="relative">
-          {indicies.map((i) => (
+    <div className='App'>
+      <div className='w-screen flex flex-col items-center min-w-[670px]' >
+        <h1 className='text-2xl font-bold underline'>Miryoku Visualizer</h1>
+        <div className='h-4' />
+        <div className='relative h-[350px] w-[670px]'>
+          {[...Array(36).keys()].map((i) => (
             <Button
               key={i}
               top={yPos[i]}
               left={xPos[i]}
               rotation={rotation[i]}
-              side={i < 18 ? "left" : "right"}
+              side={i < 18 ? 'left' : 'right'}
               leftTop={alphas[i]}
               rightTop={layer2[i]}
               leftBottom={layer3[i]}
@@ -197,9 +234,48 @@ const App = () => {
             />
           ))}
         </div>
+        <div>
+          <SelectOption
+            options={alphaLayouts}
+            onChange={setAlphaLayout}
+            selected={alphaLayout}
+            label='alphas'
+          />
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
+
+interface SelectOptionsProps {
+  options: string[]
+  selected: string
+  onChange: (value: string) => void
+  label: string
+}
+
+export const SelectOption = (props: SelectOptionsProps) => {
+  const { options, onChange, selected, label } = props
+
+  return (
+    <div className='w-[180px] text-left'>
+      <Label>{label}</Label>
+      <Select onValueChange={onChange} value={selected}>
+        <SelectTrigger>
+          <SelectValue>{selected}</SelectValue>
+        </SelectTrigger>
+        <SelectContent>
+          <SelectGroup>
+            {options.map((opt) => (
+              <SelectItem value={opt} key={opt}>
+                {opt}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </div>
+  )
+}
