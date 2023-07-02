@@ -171,7 +171,7 @@ export const colorsRight = {
 export const modLayerLeft = [
   'Boot', 'Tap' , 'Extra', 'Base', '',
   'Super', 'Alt' , 'Ctrl', 'Shift', '',
-  'Buttom', 'RAlt' , 'Opp', 'Cur', '',
+  'Button', 'RAlt' , 'Opp', 'Cur', '',
   'Media', 'Nav' , 'Mouse', 
 ]
 
@@ -179,7 +179,7 @@ export const modLayerLeft = [
 export const modLayerRight = [
   '', 'Base', 'Extra' , 'Tap', 'Boot',
   '', 'Shift', 'Ctrl' , 'Alt', 'Super',
-  '', 'Cur', 'Opp' , 'RAlt', 'Buttom',
+  '', 'Cur', 'Opp' , 'RAlt', 'Button',
   'Sym', 'Num' , 'Fun', 
 ]
 
