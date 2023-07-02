@@ -126,9 +126,23 @@ const ButtonLabel = (props: LabelProp) => {
 
 const arrangeLayer = (left: Layer, right: Layer, flip: string) => {
   if (flip === 'flip') {
-    return [...right['flip'], ...left['flip']]
+    return [...right.flip.flatMap((i) => i), ...left.flip.flatMap((i) => i)]
   }
-  return [...left['regular'], ...right['regular']]
+  return [...left.regular.flatMap((i) => i), ...right.regular.flatMap((i) => i)]
+}
+
+const arrangeAlphaLayer = (left: Layer, right: Layer, flip: string) => {
+  if (flip === 'flip') {
+    return [...left.flip.flatMap((i) => i), ...right.flip.flatMap((i) => i)]
+  }
+  return [...left.regular.flatMap((i) => i), ...right.regular.flatMap((i) => i)]
+}
+
+const getColorScheme = (index: number, flip: string) => {
+  if (flip === 'flip') {
+    return index < 18 ? 'right' : 'left'
+  }
+  return index < 18 ? 'left' : 'right'
 }
 
 const alphaLayoutOptions = ['azerty', 'qwerty']
@@ -143,18 +157,33 @@ const App = () => {
   const alphas = useMemo(() => {
     switch (alphaLayout) {
       case 'qwerty':
-        return [...alphasQwertyLeft, ...alphasQwertyRight]
+        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
       case 'azerty':
-        return [...alphasAzertyLeft, ...alphasAzertyRight]
+        return arrangeAlphaLayer(alphasAzertyLeft, alphasAzertyRight, flip)
       default:
-        return [...alphasQwertyLeft, ...alphasQwertyRight]
+        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
     }
-  }, [alphaLayout])
-  const layer2 = arrangeLayer(symbols, mouse, flip)
-  const layer3 = [...functions, ...media]
-  const layer4 = [...nums, ...navigation]
-  const modLayer = [...modLayerLeft, ...modLayerRight]
-  const modLayerColors = [...modLayerLeftColors, ...modLayerRightColors]
+  }, [alphaLayout, flip])
+
+  const layer2 = useMemo(() => {
+    return arrangeLayer(symbols, mouse, flip)
+  }, [flip])
+
+  const layer3 = useMemo(() => {
+    return arrangeLayer(functions, media, flip)
+  }, [flip])
+
+  const layer4 = useMemo(() => {
+    return arrangeLayer(nums, navigation, flip)
+  }, [flip])
+
+  const modLayer = useMemo(() => {
+    return arrangeAlphaLayer(modLayerLeft, modLayerRight, flip)
+  }, [flip])
+
+  const modLayerColors = useMemo(() => {
+    return arrangeAlphaLayer(modLayerLeftColors, modLayerRightColors, flip)
+  }, [flip])
 
   return (
     <div className='App'>
@@ -168,7 +197,7 @@ const App = () => {
               top={yPos[i]}
               left={xPos[i]}
               rotation={rotation[i]}
-              colorScheme={i < 18 ? 'left' : 'right'}
+              colorScheme={getColorScheme(i, flip)}
               leftTopValue={alphas[i]}
               rightTopValue={layer2[i]}
               leftBottomValue={layer3[i]}
