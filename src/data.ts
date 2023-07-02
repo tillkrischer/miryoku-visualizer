@@ -1,4 +1,3 @@
-
 // prettier-ignore
 const yPosLeft = [
   40, 27, 20, 27, 33,
@@ -45,6 +44,11 @@ const rotationRight = [
 ];
 export const rotation = [...rotationLeft, ...rotationRight]
 
+export type Layer = {
+  regular: string[]
+  flip: string[]
+}
+
 // prettier-ignore
 export const alphasQwertyLeft = [
   "Q", "W", "E", "R", "T",
@@ -73,20 +77,43 @@ export const alphasAzertyRight = [
   "N", ",", ".", "/", "'",
   "↵", "⌫", "⌦"
 ];
+
 // prettier-ignore
-export const symbols = [
-  "{", "&", "*", "(", "}",
-  ":", "$", "%", "^", "+",
-  "~", "!", "@", "#", "|",
-  "(", ")", "_"
-];
+export const symbols: Layer = {
+  regular:
+    [
+      "{", "&", "*", "(", "}",
+      ":", "$", "%", "^", "+",
+      "~", "!", "@", "#", "|",
+      "(", ")", "_"
+    ],
+  flip:
+    [
+      "{", "&", "*", "(", "}",
+      "+", "$", "%", "^", ":",
+      "|", "!", "@", "#", "~",
+      "_" ,"(", ")", 
+    ],
+}
+
 // prettier-ignore
-export const mouse = [
-  "Red", "Pst", "Cpy", "Cut", "Und",
-  "", "🠘", "🠙", "🠛", "🠚",
-  "", "⇦", "⇧", "⇩", "⇨",
-  "R", "L", "M"
-];
+export const mouse: Layer = {
+  regular:
+    [
+      "Rdo", "Pst", "Cpy", "Cut", "Und",
+      "", "🠘", "🠙", "🠛", "🠚",
+      "", "⇦", "⇧", "⇩", "⇨",
+      "R", "L", "M"
+    ],
+  flip:
+    [
+      "⇦", "⇧", "⇩", "⇨", "",
+      "🠘", "🠙", "🠛", "🠚", "",
+      "Und", "Cut", "Cpy", "Pst", "Rdo",
+      "M", "L", "R"
+    ],
+}
+
 // prettier-ignore
 export const functions = [
   "F12", "F7", "F8", "F9", "PrtScr",
@@ -110,7 +137,7 @@ export const nums = [
 ];
 // prettier-ignore
 export const navigation = [
-  "Red", "Pst", "Cpy", "Cut", "Und",
+  "Rdo", "Pst", "Cpy", "Cut", "Und",
   "CapL", "⯇", "▲", "▼", "⯈",
   "Ins", "Hom", "PgD", "PgU", "End",
   "⌦", "⌫", "↵",
@@ -140,6 +167,7 @@ export const colorsRight = {
   rightBottom: colorCyan,
 }
 
+// prettier-ignore
 export const modLayerLeft = [
   'Boot', 'Tap' , 'Extra', 'Base', '',
   'Super', 'Alt' , 'Ctrl', 'Shift', '',
@@ -147,6 +175,7 @@ export const modLayerLeft = [
   'Media', 'Nav' , 'Mouse', 
 ]
 
+// prettier-ignore
 export const modLayerRight = [
   '', 'Base', 'Extra' , 'Tap', 'Boot',
   '', 'Shift', 'Ctrl' , 'Alt', 'Super',
@@ -154,6 +183,7 @@ export const modLayerRight = [
   'Sym', 'Num' , 'Fun', 
 ]
 
+// prettier-ignore
 export const modLayerLeftColors = [
   colorWhite, colorWhite , colorWhite, colorWhite, '',
   colorBlack, colorBlack , colorBlack, colorBlack, '',
@@ -161,6 +191,7 @@ export const modLayerLeftColors = [
   colorPink, colorCyan , colorYellow, 
 ]
 
+// prettier-ignore
 export const modLayerRightColors = [
   '', colorWhite, colorWhite , colorWhite, colorWhite, 
   '', colorBlack, colorBlack , colorBlack, colorBlack, 

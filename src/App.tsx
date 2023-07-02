@@ -28,6 +28,7 @@ import {
   mouse,
   media,
   symbols,
+  Layer,
 } from '@/data'
 
 interface ButtonProps {
@@ -123,10 +124,21 @@ const ButtonLabel = (props: LabelProp) => {
   )
 }
 
-const alphaLayouts = ['azerty', 'qwerty']
+const arrangeLayer = (left: Layer, right: Layer, flip: string) => {
+  if (flip === 'flip') {
+    return [...right['flip'], ...left['regular']]
+  }
+  return [...left['regular'], ...right['flip']]
+}
+
+const alphaLayoutOptions = ['azerty', 'qwerty']
+const layerOptions = ['default', 'flip']
+const navOptions = ['default', 'invertedT', 'vi']
 
 const App = () => {
   const [alphaLayout, setAlphaLayout] = useState<string>('qwerty')
+  const [flip, setFlip] = useState<string>('default')
+  const [nav, setNav] = useState<string>('default')
 
   const alphas = useMemo(() => {
     switch (alphaLayout) {
@@ -138,12 +150,10 @@ const App = () => {
         return [...alphasQwertyLeft, ...alphasQwertyRight]
     }
   }, [alphaLayout])
-  const layer2 = [...symbols, ...mouse]
+  const layer2 = arrangeLayer(symbols, mouse, flip)
   const layer3 = [...functions, ...media]
   const layer4 = [...nums, ...navigation]
-
   const modLayer = [...modLayerLeft, ...modLayerRight]
-
   const modLayerColors = [...modLayerLeftColors, ...modLayerRightColors]
 
   return (
@@ -169,12 +179,24 @@ const App = () => {
           ))}
         </div>
         <div className='h-4' />
-        <div>
+        <div className='flex gap-4'>
           <SelectOption
-            options={alphaLayouts}
+            options={alphaLayoutOptions}
             onChange={setAlphaLayout}
             selected={alphaLayout}
             label='alphas'
+          />
+          <SelectOption
+            options={navOptions}
+            onChange={setNav}
+            selected={nav}
+            label='nav'
+          />
+          <SelectOption
+            options={layerOptions}
+            onChange={setFlip}
+            selected={flip}
+            label='layers'
           />
         </div>
       </div>
