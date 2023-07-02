@@ -16,32 +16,45 @@ import {
   rotation,
   xPos,
   yPos,
-  layer2,
-  layer3,
-  layer4,
+  colorsLeft,
+  colorsRight,
+  modLayerLeft,
+  modLayerRight,
+  modLayerLeftColors,
+  modLayerRightColors,
+  functions,
+  nums,
+  navigation,
+  mouse,
+  media,
+  symbols,
 } from '@/data'
 
 interface ButtonProps {
   colorScheme: 'left' | 'right'
-  leftTop: string
-  rightTop: string
-  leftBottom: string
-  rightBottom: string
+  leftTopValue: string
+  rightTopValue: string
+  leftBottomValue: string
+  rightBottomValue: string
   top: number
   left: number
   rotation: number
+  bottomValue: string
+  bottomColor: string
 }
 
 const Button = (props: ButtonProps) => {
   const {
     colorScheme,
-    leftTop,
-    rightTop,
-    leftBottom,
-    rightBottom,
+    leftTopValue,
+    rightTopValue,
+    leftBottomValue,
+    rightBottomValue,
     top,
     left,
     rotation,
+    bottomValue,
+    bottomColor,
   } = props
 
   return (
@@ -49,43 +62,35 @@ const Button = (props: ButtonProps) => {
       className='absolute h-[54px] w-[54px] rounded-[5px] border border-black bg-[#888888]'
       style={{ top, left, transform: `rotate(${rotation}deg)` }}
     >
-      <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7]'>
+      <div className='absolute left-[5px] top-[3px] h-[42px] w-[42px] rounded-[3px] border border-[rgba(0,0,0,0.3)] bg-[#a7a7a7] leading-none'>
         <ButtonLabel
           position='leftTop'
-          value={leftTop}
+          value={leftTopValue}
           colorScheme={colorScheme}
         />
         <ButtonLabel
           position='rightTop'
-          value={rightTop}
+          value={rightTopValue}
           colorScheme={colorScheme}
         />
         <ButtonLabel
           position='leftBottom'
-          value={leftBottom}
+          value={leftBottomValue}
           colorScheme={colorScheme}
         />
         <ButtonLabel
           position='rightBottom'
-          value={rightBottom}
+          value={rightBottomValue}
           colorScheme={colorScheme}
         />
       </div>
+      <div
+        className={`absolute bottom-[0px]  flex  w-full justify-center text-[0.5rem] font-[600] leading-none ${bottomColor}`}
+      >
+        {bottomValue}
+      </div>
     </div>
   )
-}
-
-const colorsLeft = {
-  leftTop: 'text-[#000000]',
-  rightTop: 'text-[#5cfc45]',
-  leftBottom: 'text-[#fd4526]',
-  rightBottom: 'text-[#4322fd]',
-}
-const colorsRight = {
-  leftTop: 'text-[#000000]',
-  rightTop: 'text-[#ffff1b]',
-  leftBottom: 'text-[#ff4fff]',
-  rightBottom: 'text-[#4bffff]',
 }
 
 interface LabelProp {
@@ -111,7 +116,11 @@ const ButtonLabel = (props: LabelProp) => {
     color = colorsRight[position]
   }
 
-  return <div className={`absolute ${pos} text-[0.75rem] font-[500] ${color}`}>{value}</div>
+  return (
+    <div className={`absolute ${pos} text-[0.75rem] font-[500] ${color}`}>
+      {value}
+    </div>
+  )
 }
 
 const alphaLayouts = ['azerty', 'qwerty']
@@ -129,13 +138,20 @@ const App = () => {
         return [...alphasQwertyLeft, ...alphasQwertyRight]
     }
   }, [alphaLayout])
+  const layer2 = [...symbols, ...mouse]
+  const layer3 = [...functions, ...media]
+  const layer4 = [...nums, ...navigation]
+
+  const modLayer = [...modLayerLeft, ...modLayerRight]
+
+  const modLayerColors = [...modLayerLeftColors, ...modLayerRightColors]
 
   return (
     <div className='App'>
       <div className='flex w-screen min-w-[670px] flex-col items-center'>
         <h1 className='text-2xl font-bold underline'>Miryoku Visualizer</h1>
         <div className='h-4' />
-        <div className='relative h-[350px] w-[670px]'>
+        <div className='relative h-[320px] w-[670px]'>
           {[...Array(36).keys()].map((i) => (
             <Button
               key={i}
@@ -143,13 +159,16 @@ const App = () => {
               left={xPos[i]}
               rotation={rotation[i]}
               colorScheme={i < 18 ? 'left' : 'right'}
-              leftTop={alphas[i]}
-              rightTop={layer2[i]}
-              leftBottom={layer3[i]}
-              rightBottom={layer4[i]}
+              leftTopValue={alphas[i]}
+              rightTopValue={layer2[i]}
+              leftBottomValue={layer3[i]}
+              rightBottomValue={layer4[i]}
+              bottomValue={modLayer[i]}
+              bottomColor={modLayerColors[i]}
             />
           ))}
         </div>
+        <div className='h-4' />
         <div>
           <SelectOption
             options={alphaLayouts}

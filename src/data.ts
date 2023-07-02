@@ -74,47 +74,96 @@ export const alphasAzertyRight = [
   "↵", "⌫", "⌦"
 ];
 // prettier-ignore
-const symbols = [
+export const symbols = [
   "{", "&", "*", "(", "}",
   ":", "$", "%", "^", "+",
   "~", "!", "@", "#", "|",
   "(", ")", "_"
 ];
 // prettier-ignore
-const mouse = [
-  "Redo", "Paste", "Copy", "Cut", "Undo",
+export const mouse = [
+  "Red", "Pst", "Cpy", "Cut", "Und",
   "", "🠘", "🠙", "🠛", "🠚",
   "", "⇦", "⇧", "⇩", "⇨",
   "R", "L", "M"
 ];
-export const layer2 = [...symbols, ...mouse]
 // prettier-ignore
-const functions = [
+export const functions = [
   "F12", "F7", "F8", "F9", "PrtScr",
   "F11", "F4", "F5", "F6", "ScrLo",
   "F10", "F1", "F2", "F3", "Pause",
   "≡", "Spc", "⭾"
 ];
 // prettier-ignore
-const media = [
+export const media = [
   "R", "M", "H", "S", "V",
   "E", "Prev", "VUp", "VDo", "Next",
   "◯", "1", "2", "3", "4",
-  "Stop", "Play", "Mut"
+  "Stp", "Ply", "Mut"
 ];
-export const layer3 = [...functions, ...media]
 // prettier-ignore
-const nums = [
+export const nums = [
   "[", "7", "8", "9", "]",
   ";", "4", "5", "6", "=",
   "`", "1", "2", "3", "\\",
   ".", "0", "-"
 ];
 // prettier-ignore
-const navigation = [
-  "Redo", "Paste", "Copy", "Cut", "Undo",
+export const navigation = [
+  "Red", "Pst", "Cpy", "Cut", "Und",
   "CapL", "⯇", "▲", "▼", "⯈",
-  "Ins", "Home", "PgD", "PgU", "End",
-  "↵", "⌫", "⌦"
+  "Ins", "Hom", "PgD", "PgU", "End",
+  "⌦", "⌫", "↵",
 ];
-export const layer4 = [...nums, ...navigation]
+
+const colorBlack = 'text-[#000000]'
+const colorGreen = 'text-[#5cfc45]'
+const colorRed = 'text-[#fd4526]'
+const colorBlue = 'text-[#4322fd]'
+const colorYellow = 'text-[#ffff1b]'
+const colorPink = 'text-[#ff4fff]'
+const colorCyan = 'text-[#4bffff]'
+const colorWhite = 'text-[#ffffff]'
+const colorGrey = 'text-[#b2b2b2]'
+
+export const colorsLeft = {
+  leftTop: colorBlack,
+  rightTop: colorGreen,
+  leftBottom: colorRed,
+  rightBottom: colorBlue,
+}
+
+export const colorsRight = {
+  leftTop: colorBlack,
+  rightTop: colorYellow,
+  leftBottom: colorPink,
+  rightBottom: colorCyan,
+}
+
+export const modLayerLeft = [
+  'Boot', 'Tap' , 'Extra', 'Base', '',
+  'Super', 'Alt' , 'Ctrl', 'Shift', '',
+  'Buttom', 'RAlt' , 'Opp', 'Cur', '',
+  'Media', 'Nav' , 'Mouse', 
+]
+
+export const modLayerRight = [
+  '', 'Base', 'Extra' , 'Tap', 'Boot',
+  '', 'Shift', 'Ctrl' , 'Alt', 'Super',
+  '', 'Cur', 'Opp' , 'RAlt', 'Buttom',
+  'Sym', 'Num' , 'Fun', 
+]
+
+export const modLayerLeftColors = [
+  colorWhite, colorWhite , colorWhite, colorWhite, '',
+  colorBlack, colorBlack , colorBlack, colorBlack, '',
+  colorGrey, colorBlack , colorWhite, colorWhite, '',
+  colorPink, colorCyan , colorYellow, 
+]
+
+export const modLayerRightColors = [
+  '', colorWhite, colorWhite , colorWhite, colorWhite, 
+  '', colorBlack, colorBlack , colorBlack, colorBlack, 
+  '', colorWhite, colorWhite , colorBlack, colorGrey, 
+  colorGreen, colorBlue, colorRed, 
+]
