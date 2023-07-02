@@ -126,9 +126,9 @@ const ButtonLabel = (props: LabelProp) => {
 
 const arrangeLayer = (left: Layer, right: Layer, flip: string) => {
   if (flip === 'flip') {
-    return [...right['flip'], ...left['regular']]
+    return [...right['flip'], ...left['flip']]
   }
-  return [...left['regular'], ...right['flip']]
+  return [...left['regular'], ...right['regular']]
 }
 
 const alphaLayoutOptions = ['azerty', 'qwerty']
