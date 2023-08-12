@@ -124,18 +124,69 @@ const ButtonLabel = (props: LabelProp) => {
   )
 }
 
-const arrangeLayer = (left: Layer, right: Layer, flip: string) => {
+const arrangeLayerInternal = (left: Layer, right: Layer, flip: string, nav: string, flipLayers: boolean) => {
+  let rightHalf: string[][];
+  let leftHalf: string[][];
+
   if (flip === 'flip') {
-    return [...right.flip.flatMap((i) => i), ...left.flip.flatMap((i) => i)]
+    rightHalf = right.flip.default
+    leftHalf = left.flip.default
+    if (nav === 'invertedT') {
+      if (right.flip.invertedT) {
+        rightHalf = right.flip.invertedT
+      }
+      if (left.flip.invertedT) {
+        leftHalf = left.flip.invertedT
+      }
+    }
+    else if (nav === 'vi') {
+      if (right.flip.vi) {
+        rightHalf = right.flip.vi
+      }
+      if (left.flip.vi) {
+        leftHalf = left.flip.vi
+      }
+    }
+  } else {
+    rightHalf = right.regular.default
+    leftHalf = left.regular.default
+    if (nav === 'invertedT') {
+      if (right.regular.invertedT) {
+        rightHalf = right.regular.invertedT
+      }
+      if (left.regular.invertedT) {
+        leftHalf = left.regular.invertedT
+      }
+    }
+    if (nav === 'vi') {
+      if (right.regular.vi) {
+        rightHalf = right.regular.vi
+      }
+      if (left.regular.vi) {
+        leftHalf = left.regular.vi
+      }
+    }
   }
-  return [...left.regular.flatMap((i) => i), ...right.regular.flatMap((i) => i)]
+
+  if (flip === 'flip' && flipLayers) {
+    return [
+      ...rightHalf.flatMap((i) => i),
+      ...leftHalf.flatMap((i) => i),
+    ]
+  }
+
+  return [
+    ...leftHalf.flatMap((i) => i),
+    ...rightHalf.flatMap((i) => i),
+  ]
 }
 
-const arrangeAlphaLayer = (left: Layer, right: Layer, flip: string) => {
-  if (flip === 'flip') {
-    return [...left.flip.flatMap((i) => i), ...right.flip.flatMap((i) => i)]
-  }
-  return [...left.regular.flatMap((i) => i), ...right.regular.flatMap((i) => i)]
+const arrangeLayer = (left: Layer, right: Layer, flip: string, nav: string) => {
+  return arrangeLayerInternal(left, right, flip, nav, true)
+}
+
+const arrangeAlphaLayer = (left: Layer, right: Layer, flip: string, nav: string) => {
+  return arrangeLayerInternal(left, right, flip, nav, false)
 }
 
 const getColorScheme = (index: number, flip: string) => {
@@ -149,7 +200,7 @@ const alphaLayoutOptions = ['azerty', 'qwerty']
 const layerOptions = ['default', 'flip']
 const navOptions = ['default', 'invertedT', 'vi']
 
-const App = () => {
+export const App = () => {
   const [alphaLayout, setAlphaLayout] = useState<string>('qwerty')
   const [flip, setFlip] = useState<string>('default')
   const [nav, setNav] = useState<string>('default')
@@ -157,33 +208,33 @@ const App = () => {
   const alphas = useMemo(() => {
     switch (alphaLayout) {
       case 'qwerty':
-        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
+        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip, nav)
       case 'azerty':
-        return arrangeAlphaLayer(alphasAzertyLeft, alphasAzertyRight, flip)
+        return arrangeAlphaLayer(alphasAzertyLeft, alphasAzertyRight, flip, nav)
       default:
-        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
+        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip, nav)
     }
-  }, [alphaLayout, flip])
+  }, [alphaLayout, flip, nav])
 
   const layer2 = useMemo(() => {
-    return arrangeLayer(symbols, mouse, flip)
-  }, [flip])
+    return arrangeLayer(symbols, mouse, flip, nav)
+  }, [flip, nav])
 
   const layer3 = useMemo(() => {
-    return arrangeLayer(functions, media, flip)
-  }, [flip])
+    return arrangeLayer(functions, media, flip, nav)
+  }, [flip, nav])
 
   const layer4 = useMemo(() => {
-    return arrangeLayer(nums, navigation, flip)
-  }, [flip])
+    return arrangeLayer(nums, navigation, flip, nav)
+  }, [flip, nav])
 
   const modLayer = useMemo(() => {
-    return arrangeAlphaLayer(modLayerLeft, modLayerRight, flip)
-  }, [flip])
+    return arrangeAlphaLayer(modLayerLeft, modLayerRight, flip, nav)
+  }, [flip, nav])
 
   const modLayerColors = useMemo(() => {
-    return arrangeAlphaLayer(modLayerLeftColors, modLayerRightColors, flip)
-  }, [flip])
+    return arrangeAlphaLayer(modLayerLeftColors, modLayerRightColors, flip, nav)
+  }, [flip, nav])
 
   return (
     <div className='App'>
@@ -232,8 +283,6 @@ const App = () => {
     </div>
   )
 }
-
-export default App
 
 interface SelectOptionsProps {
   options: string[]
