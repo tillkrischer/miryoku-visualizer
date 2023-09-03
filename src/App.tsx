@@ -29,6 +29,18 @@ import {
   media,
   symbols,
   Layer,
+  alphasColemakLeft,
+  alphasColemakRight,
+  alphasColemakdhkLeft,
+  alphasColemakdhkRight,
+  alphasDvorakLeft,
+  alphasDvorakRight,
+  alphasHalmakRight,
+  alphasHalmakLeft,
+  alphasWorkmanRight,
+  alphasQwertzRight,
+  alphasQwertzLeft,
+  alphasWorkmanLeft,
 } from '@/data'
 
 interface ButtonProps {
@@ -145,23 +157,52 @@ const getColorScheme = (index: number, flip: string) => {
   return index < 18 ? 'left' : 'right'
 }
 
-const alphaLayoutOptions = ['azerty', 'qwerty']
+const alphaLayoutOptions = [
+  'azerty',
+  'colemak',
+  'colemakdhk',
+  'dvorak',
+  'halmak',
+  'workman',
+  'qwerty',
+  'qwertz',
+]
 const layerOptions = ['default', 'flip']
 const navOptions = ['default', 'invertedT', 'vi']
 
 const App = () => {
-  const [alphaLayout, setAlphaLayout] = useState<string>('qwerty')
+  const [alphaLayout, setAlphaLayout] = useState<string>('colemakdhk')
   const [flip, setFlip] = useState<string>('default')
   const [nav, setNav] = useState<string>('default')
 
   const alphas = useMemo(() => {
     switch (alphaLayout) {
-      case 'qwerty':
-        return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
       case 'azerty':
         return arrangeAlphaLayer(alphasAzertyLeft, alphasAzertyRight, flip)
-      default:
+      case 'colemak':
+        return arrangeAlphaLayer(alphasColemakLeft, alphasColemakRight, flip)
+      case 'colemakdhk':
+        return arrangeAlphaLayer(
+          alphasColemakdhkLeft,
+          alphasColemakdhkRight,
+          flip
+        )
+      case 'dvorak':
+        return arrangeAlphaLayer(alphasDvorakLeft, alphasDvorakRight, flip)
+      case 'halmak':
+        return arrangeAlphaLayer(alphasHalmakLeft, alphasHalmakRight, flip)
+      case 'workman':
+        return arrangeAlphaLayer(alphasWorkmanLeft, alphasWorkmanRight, flip)
+      case 'qwerty':
         return arrangeAlphaLayer(alphasQwertyLeft, alphasQwertyRight, flip)
+      case 'qwertz':
+        return arrangeAlphaLayer(alphasQwertzLeft, alphasQwertzRight, flip)
+      default:
+        return arrangeAlphaLayer(
+          alphasColemakdhkLeft,
+          alphasColemakdhkRight,
+          flip
+        )
     }
   }, [alphaLayout, flip])
 

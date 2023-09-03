@@ -60,36 +60,6 @@ export type Layer = {
   flip: string[][]
 }
 
-export const alphasQwertyLeft: Layer = {
-  regular: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['⌦', '⌫', '↵'],
-  ],
-}
-
-export const alphasQwertyRight: Layer = {
-  regular: [
-    ['Y', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', "'"],
-    ['N', 'M', ',', '.', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['Y', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', "'"],
-    ['N', 'M', ',', '.', '/'],
-    ['⭾', 'Spc', 'Esc'],
-  ],
-}
-
 export const alphasAzertyLeft: Layer = {
   regular: [
     ['A', 'Z', 'E', 'R', 'T'],
@@ -105,21 +75,215 @@ export const alphasAzertyLeft: Layer = {
   ],
 }
 
-// prettier-ignore
 export const alphasAzertyRight: Layer = {
   regular: [
-    ["Y", "U", "I", "O", "P"],
-    ["H", "J", "K", "L", "M"],
-    ["N", ",", ".", "/", "'"],
-    ["↵", "⌫", "⌦"]
+    ['Y', 'U', 'I', 'O', 'P'],
+    ['H', 'J', 'K', 'L', 'M'],
+    ['N', ',', '.', '/', "'"],
+    ['↵', '⌫', '⌦'],
   ],
   flip: [
-    ["Y", "U", "I", "O", "P"],
-    ["H", "J", "K", "L", "M"],
-    ["N", ",", ".", "/", "'"],
-    ["Esc", "Spc", "⭾"]
+    ['Y', 'U', 'I', 'O', 'P'],
+    ['H', 'J', 'K', 'L', 'M'],
+    ['N', ',', '.', '/', "'"],
+    ['Esc', 'Spc', '⭾'],
   ],
-};
+}
+
+export const alphasColemakLeft: Layer = {
+  regular: [
+    ['Q', 'W', 'F', 'P', 'G'],
+    ['A', 'R', 'S', 'T', 'D'],
+    ['Z', 'X', 'C', 'V', 'B'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['Q', 'W', 'F', 'P', 'G'],
+    ['A', 'R', 'S', 'T', 'D'],
+    ['Z', 'X', 'C', 'V', 'B'],
+    ['↵', '⌫', '⌦'],
+  ],
+}
+
+export const alphasColemakRight: Layer = {
+  regular: [
+    ['J', 'L', 'U', 'Y', "'"],
+    ['H', 'N', 'E', 'I', 'O'],
+    ['K', 'M', ',', '.', '/'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ['J', 'L', 'U', 'Y', "'"],
+    ['H', 'N', 'E', 'I', 'O'],
+    ['K', 'M', ',', '.', '/'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+}
+
+export const alphasColemakdhkLeft: Layer = {
+  regular: [
+    ['Q', 'W', 'F', 'P', 'B'],
+    ['A', 'R', 'S', 'T', 'G'],
+    ['Z', 'X', 'C', 'D', 'V'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['Q', 'W', 'F', 'P', 'B'],
+    ['A', 'R', 'S', 'T', 'G'],
+    ['Z', 'X', 'C', 'D', 'V'],
+    ['↵', '⌫', '⌦'],
+  ],
+}
+
+export const alphasColemakdhkRight: Layer = {
+  regular: [
+    ['J', 'L', 'U', 'Y', "'"],
+    ['K', 'N', 'E', 'I', 'O'],
+    ['M', 'H', ',', '.', '/'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ['J', 'L', 'U', 'Y', "'"],
+    ['K', 'N', 'E', 'I', 'O'],
+    ['M', 'H', ',', '.', '/'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+}
+
+export const alphasDvorakLeft: Layer = {
+  regular: [
+    ["'", ',', '.', 'P', 'Y'],
+    ['A', 'O', 'E', 'U', 'I'],
+    ['/', 'Q', 'J', 'K', 'X'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ["'", ',', '.', 'P', 'Y'],
+    ['A', 'O', 'E', 'U', 'I'],
+    ['/', 'Q', 'J', 'K', 'X'],
+    ['↵', '⌫', '⌦'],
+  ],
+}
+
+export const alphasDvorakRight: Layer = {
+  regular: [
+    ['F', 'G', 'C', 'R', 'L'],
+    ['D', 'H', 'T', 'N', 'S'],
+    ['B', 'M', 'W', 'V', 'Z'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ['F', 'G', 'C', 'R', 'L'],
+    ['D', 'H', 'T', 'N', 'S'],
+    ['B', 'M', 'W', 'V', 'Z'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+}
+
+export const alphasHalmakLeft: Layer = {
+  regular: [
+    ['W', 'L', 'R', 'B', 'Z'],
+    ['S', 'H', 'N', 'T', ','],
+    ['F', 'M', 'V', 'C', '/'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['W', 'L', 'R', 'B', 'Z'],
+    ['S', 'H', 'N', 'T', ','],
+    ['F', 'M', 'V', 'C', '/'],
+    ['↵', '⌫', '⌦'],
+  ],
+}
+
+export const alphasHalmakRight: Layer = {
+  regular: [
+    ["'", 'Q', 'U', 'D', 'J'],
+    ['.', 'A', 'E', 'O', 'I'],
+    ['G', 'P', 'X', 'K', 'Y'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ["'", 'Q', 'U', 'D', 'J'],
+    ['.', 'A', 'E', 'O', 'I'],
+    ['G', 'P', 'X', 'K', 'Y'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+}
+
+export const alphasWorkmanLeft: Layer = {
+  regular: [
+    ['Q', 'D', 'R', 'W', 'B'],
+    ['A', 'S', 'H', 'T', 'G'],
+    ['Z', 'X', 'M', 'C', 'V'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['Q', 'D', 'R', 'W', 'B'],
+    ['A', 'S', 'H', 'T', 'G'],
+    ['Z', 'X', 'M', 'C', 'V'],
+    ['↵', '⌫', '⌦'],
+  ],
+}
+
+export const alphasWorkmanRight: Layer = {
+  regular: [
+    ['J', 'F', 'U', 'P', "'"],
+    ['Y', 'N', 'E', 'O', 'I'],
+    ['K', 'L', ',', '.', '/'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ['J', 'F', 'U', 'P', "'"],
+    ['Y', 'N', 'E', 'O', 'I'],
+    ['K', 'L', ',', '.', '/'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+}
+
+export const alphasQwertyLeft: Layer = {
+  regular: [
+    ['Q', 'W', 'E', 'R', 'T'],
+    ['A', 'S', 'D', 'F', 'G'],
+    ['Z', 'X', 'C', 'V', 'B'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['Q', 'W', 'E', 'R', 'T'],
+    ['A', 'S', 'D', 'F', 'G'],
+    ['Z', 'X', 'C', 'V', 'B'],
+    ['⌦', '⌫', '↵'],
+  ],
+}
+
+export const alphasQwertzLeft: Layer = {
+  regular: [
+    ['Q', 'W', 'E', 'R', 'T'],
+    ['A', 'S', 'D', 'F', 'G'],
+    ['Y', 'X', 'C', 'V', 'B'],
+    ['Esc', 'Spc', '⭾'],
+  ],
+  flip: [
+    ['Q', 'W', 'E', 'R', 'T'],
+    ['A', 'S', 'D', 'F', 'G'],
+    ['Y', 'X', 'C', 'V', 'B'],
+    ['⌦', '⌫', '↵'],
+  ],
+}
+
+export const alphasQwertzRight: Layer = {
+  regular: [
+    ['Z', 'U', 'I', 'O', 'P'],
+    ['H', 'J', 'K', 'L', "'"],
+    ['N', 'M', ',', '.', '/'],
+    ['↵', '⌫', '⌦'],
+  ],
+  flip: [
+    ['Z', 'U', 'I', 'O', 'P'],
+    ['H', 'J', 'K', 'L', "'"],
+    ['N', 'M', ',', '.', '/'],
+    ['⭾', 'Spc', 'Esc'],
+  ],
+}
 
 // prettier-ignore
 export const symbols: Layer = {
