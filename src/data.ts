@@ -56,324 +56,507 @@ export const rotation = [
 ]
 
 export type Layer = {
-  regular: string[][]
-  flip: string[][]
+  regular: {
+    default: string[][]
+    invertedT?: string[][]
+    vi?: string[][]
+  }
+  flip: {
+    default: string[][]
+    invertedT?: string[][]
+    vi?: string[][]
+  }
 }
 
 export const alphasAzertyLeft: Layer = {
-  regular: [
-    ['A', 'Z', 'E', 'R', 'T'],
-    ['Q', 'S', 'D', 'F', 'G'],
-    ['W', 'X', 'C', 'V', 'B'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['A', 'Z', 'E', 'R', 'T'],
-    ['Q', 'S', 'D', 'F', 'G'],
-    ['W', 'X', 'C', 'V', 'B'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ['A', 'Z', 'E', 'R', 'T'],
+      ['Q', 'S', 'D', 'F', 'G'],
+      ['W', 'X', 'C', 'V', 'B'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['A', 'Z', 'E', 'R', 'T'],
+      ['Q', 'S', 'D', 'F', 'G'],
+      ['W', 'X', 'C', 'V', 'B'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasAzertyRight: Layer = {
-  regular: [
-    ['Y', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', 'M'],
-    ['N', ',', '.', '/', "'"],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['Y', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', 'M'],
-    ['N', ',', '.', '/', "'"],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['Y', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', 'M'],
+      ['N', ',', '.', '/', "'"],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Y', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', 'M'],
+      ['N', ',', '.', '/', "'"],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasColemakLeft: Layer = {
-  regular: [
-    ['Q', 'W', 'F', 'P', 'G'],
-    ['A', 'R', 'S', 'T', 'D'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'W', 'F', 'P', 'G'],
-    ['A', 'R', 'S', 'T', 'D'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ['Q', 'W', 'F', 'P', 'G'],
+      ['A', 'R', 'S', 'T', 'D'],
+      ['Z', 'X', 'C', 'V', 'B'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Q', 'W', 'F', 'P', 'G'],
+      ['A', 'R', 'S', 'T', 'D'],
+      ['Z', 'X', 'C', 'V', 'B'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasColemakRight: Layer = {
-  regular: [
-    ['J', 'L', 'U', 'Y', "'"],
-    ['H', 'N', 'E', 'I', 'O'],
-    ['K', 'M', ',', '.', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['J', 'L', 'U', 'Y', "'"],
-    ['H', 'N', 'E', 'I', 'O'],
-    ['K', 'M', ',', '.', '/'],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['J', 'L', 'U', 'Y', "'"],
+      ['H', 'N', 'E', 'I', 'O'],
+      ['K', 'M', ',', '.', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['J', 'L', 'U', 'Y', "'"],
+      ['H', 'N', 'E', 'I', 'O'],
+      ['K', 'M', ',', '.', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasColemakdhkLeft: Layer = {
-  regular: [
-    ['Q', 'W', 'F', 'P', 'B'],
-    ['A', 'R', 'S', 'T', 'G'],
-    ['Z', 'X', 'C', 'D', 'V'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'W', 'F', 'P', 'B'],
-    ['A', 'R', 'S', 'T', 'G'],
-    ['Z', 'X', 'C', 'D', 'V'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ['Q', 'W', 'F', 'P', 'B'],
+      ['A', 'R', 'S', 'T', 'G'],
+      ['Z', 'X', 'C', 'D', 'V'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Q', 'W', 'F', 'P', 'B'],
+      ['A', 'R', 'S', 'T', 'G'],
+      ['Z', 'X', 'C', 'D', 'V'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasColemakdhkRight: Layer = {
-  regular: [
-    ['J', 'L', 'U', 'Y', "'"],
-    ['K', 'N', 'E', 'I', 'O'],
-    ['M', 'H', ',', '.', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['J', 'L', 'U', 'Y', "'"],
-    ['K', 'N', 'E', 'I', 'O'],
-    ['M', 'H', ',', '.', '/'],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['J', 'L', 'U', 'Y', "'"],
+      ['K', 'N', 'E', 'I', 'O'],
+      ['M', 'H', ',', '.', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['J', 'L', 'U', 'Y', "'"],
+      ['K', 'N', 'E', 'I', 'O'],
+      ['M', 'H', ',', '.', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasDvorakLeft: Layer = {
-  regular: [
-    ["'", ',', '.', 'P', 'Y'],
-    ['A', 'O', 'E', 'U', 'I'],
-    ['/', 'Q', 'J', 'K', 'X'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ["'", ',', '.', 'P', 'Y'],
-    ['A', 'O', 'E', 'U', 'I'],
-    ['/', 'Q', 'J', 'K', 'X'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ["'", ',', '.', 'P', 'Y'],
+      ['A', 'O', 'E', 'U', 'I'],
+      ['/', 'Q', 'J', 'K', 'X'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ["'", ',', '.', 'P', 'Y'],
+      ['A', 'O', 'E', 'U', 'I'],
+      ['/', 'Q', 'J', 'K', 'X'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasDvorakRight: Layer = {
-  regular: [
-    ['F', 'G', 'C', 'R', 'L'],
-    ['D', 'H', 'T', 'N', 'S'],
-    ['B', 'M', 'W', 'V', 'Z'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['F', 'G', 'C', 'R', 'L'],
-    ['D', 'H', 'T', 'N', 'S'],
-    ['B', 'M', 'W', 'V', 'Z'],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['F', 'G', 'C', 'R', 'L'],
+      ['D', 'H', 'T', 'N', 'S'],
+      ['B', 'M', 'W', 'V', 'Z'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['F', 'G', 'C', 'R', 'L'],
+      ['D', 'H', 'T', 'N', 'S'],
+      ['B', 'M', 'W', 'V', 'Z'],
+      ['↵', '⌫', '⌦'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasHalmakLeft: Layer = {
-  regular: [
-    ['W', 'L', 'R', 'B', 'Z'],
-    ['S', 'H', 'N', 'T', ','],
-    ['F', 'M', 'V', 'C', '/'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['W', 'L', 'R', 'B', 'Z'],
-    ['S', 'H', 'N', 'T', ','],
-    ['F', 'M', 'V', 'C', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ['W', 'L', 'R', 'B', 'Z'],
+      ['S', 'H', 'N', 'T', ','],
+      ['F', 'M', 'V', 'C', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['W', 'L', 'R', 'B', 'Z'],
+      ['S', 'H', 'N', 'T', ','],
+      ['F', 'M', 'V', 'C', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasHalmakRight: Layer = {
-  regular: [
-    ["'", 'Q', 'U', 'D', 'J'],
-    ['.', 'A', 'E', 'O', 'I'],
-    ['G', 'P', 'X', 'K', 'Y'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ["'", 'Q', 'U', 'D', 'J'],
-    ['.', 'A', 'E', 'O', 'I'],
-    ['G', 'P', 'X', 'K', 'Y'],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ["'", 'Q', 'U', 'D', 'J'],
+      ['.', 'A', 'E', 'O', 'I'],
+      ['G', 'P', 'X', 'K', 'Y'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ["'", 'Q', 'U', 'D', 'J'],
+      ['.', 'A', 'E', 'O', 'I'],
+      ['G', 'P', 'X', 'K', 'Y'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasWorkmanLeft: Layer = {
-  regular: [
-    ['Q', 'D', 'R', 'W', 'B'],
-    ['A', 'S', 'H', 'T', 'G'],
-    ['Z', 'X', 'M', 'C', 'V'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'D', 'R', 'W', 'B'],
-    ['A', 'S', 'H', 'T', 'G'],
-    ['Z', 'X', 'M', 'C', 'V'],
-    ['↵', '⌫', '⌦'],
-  ],
+  regular: {
+    default: [
+      ['Q', 'D', 'R', 'W', 'B'],
+      ['A', 'S', 'H', 'T', 'G'],
+      ['Z', 'X', 'M', 'C', 'V'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Q', 'D', 'R', 'W', 'B'],
+      ['A', 'S', 'H', 'T', 'G'],
+      ['Z', 'X', 'M', 'C', 'V'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasWorkmanRight: Layer = {
-  regular: [
-    ['J', 'F', 'U', 'P', "'"],
-    ['Y', 'N', 'E', 'O', 'I'],
-    ['K', 'L', ',', '.', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['J', 'F', 'U', 'P', "'"],
-    ['Y', 'N', 'E', 'O', 'I'],
-    ['K', 'L', ',', '.', '/'],
-    ['Esc', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['J', 'F', 'U', 'P', "'"],
+      ['Y', 'N', 'E', 'O', 'I'],
+      ['K', 'L', ',', '.', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['J', 'F', 'U', 'P', "'"],
+      ['Y', 'N', 'E', 'O', 'I'],
+      ['K', 'L', ',', '.', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasQwertyLeft: Layer = {
-  regular: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Z', 'X', 'C', 'V', 'B'],
-    ['⌦', '⌫', '↵'],
-  ],
+  regular: {
+    default: [
+      ['Q', 'W', 'E', 'R', 'T'],
+      ['A', 'S', 'D', 'F', 'G'],
+      ['Z', 'X', 'C', 'V', 'B'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Q', 'W', 'E', 'R', 'T'],
+      ['A', 'S', 'D', 'F', 'G'],
+      ['Z', 'X', 'C', 'V', 'B'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+}
+
+export const alphasQwertyRight: Layer = {
+  regular: {
+    default: [
+      ['Y', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', "'"],
+      ['N', 'M', ',', '.', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Y', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', "'"],
+      ['N', 'M', ',', '.', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const alphasQwertzLeft: Layer = {
-  regular: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Y', 'X', 'C', 'V', 'B'],
-    ['Esc', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['Q', 'W', 'E', 'R', 'T'],
-    ['A', 'S', 'D', 'F', 'G'],
-    ['Y', 'X', 'C', 'V', 'B'],
-    ['⌦', '⌫', '↵'],
-  ],
+  regular: {
+    default: [
+      ['Q', 'W', 'E', 'R', 'T'],
+      ['A', 'S', 'D', 'F', 'G'],
+      ['Y', 'X', 'C', 'V', 'B'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Q', 'W', 'E', 'R', 'T'],
+      ['A', 'S', 'D', 'F', 'G'],
+      ['Y', 'X', 'C', 'V', 'B'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
 }
 
 export const alphasQwertzRight: Layer = {
-  regular: [
-    ['Z', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', "'"],
-    ['N', 'M', ',', '.', '/'],
-    ['↵', '⌫', '⌦'],
-  ],
-  flip: [
-    ['Z', 'U', 'I', 'O', 'P'],
-    ['H', 'J', 'K', 'L', "'"],
-    ['N', 'M', ',', '.', '/'],
-    ['⭾', 'Spc', 'Esc'],
-  ],
+  regular: {
+    default: [
+      ['Z', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', "'"],
+      ['N', 'M', ',', '.', '/'],
+      ['↵', '⌫', '⌦'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Z', 'U', 'I', 'O', 'P'],
+      ['H', 'J', 'K', 'L', "'"],
+      ['N', 'M', ',', '.', '/'],
+      ['Esc', 'Spc', '⭾'],
+    ],
+  },
 }
 
-// prettier-ignore
 export const symbols: Layer = {
-  regular: [
-    ["{", "&", "*", "(", "}"],
-    [":", "$", "%", "^", "+"],
-    ["~", "!", "@", "#", "|"],
-    ["(", ")", "_"]
-  ],
-  flip: [
-    ["{", "&", "*", "(", "}"],
-    ["+", "$", "%", "^", ":"],
-    ["|", "!", "@", "#", "~"],
-    ["_" ,"(", ")"], 
-  ],
+  regular: {
+    default: [
+      ['{', '&', '*', '(', '}'],
+      [':', '$', '%', '^', '+'],
+      ['~', '!', '@', '#', '|'],
+      ['(', ')', '_'],
+    ],
+  },
+  flip: {
+    default: [
+      ['{', '&', '*', '(', '}'],
+      ['+', '$', '%', '^', ':'],
+      ['|', '!', '@', '#', '~'],
+      ['_', '(', ')'],
+    ],
+  },
 }
 
 export const mouse: Layer = {
-  regular: [
-    ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
-    ['', '🠘', '🠙', '🠛', '🠚'],
-    ['', '⇦', '⇧', '⇩', '⇨'],
-    ['R', 'L', 'M'],
-  ],
-  flip: [
-    ['⇦', '⇧', '⇩', '⇨', ''],
-    ['🠘', '🠙', '🠛', '🠚', ''],
-    ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
-    ['M', 'L', 'R'],
-  ],
+  regular: {
+    default: [
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['', '🠘', '🠙', '🠛', '🠚'],
+      ['', '⇦', '⇧', '⇩', '⇨'],
+      ['R', 'L', 'M'],
+    ],
+    invertedT: [
+      ['', '⇦', '🠙', '⇨', '⇧'],
+      ['', '🠘', '🠛', '🠚', '⇩'],
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['R', 'L', 'M'],
+    ],
+    vi: [
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['🠘', '🠛', '🠙', '🠚', ''],
+      ['⇦', '⇩', '⇧', '⇨', ''],
+      ['R', 'L', 'M'],
+    ],
+  },
+  flip: {
+    default: [
+      ['⇦', '⇧', '⇩', '⇨', ''],
+      ['🠘', '🠙', '🠛', '🠚', ''],
+      ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+      ['M', 'L', 'R'],
+    ],
+    invertedT: [
+      ['⇦', '🠙', '⇨', '⇧', ''],
+      ['🠘', '🠛', '🠚', '⇩', ''],
+      ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+      ['M', 'L', 'R'],
+    ],
+    // vi: [
+    //   ['', '⇦', '⇧', '⇩', '⇨'],
+    //   ['', '🠘', '🠙', '🠛', '🠚'],
+    //   ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+    //   ['M', 'L', 'R'],
+    // ],
+  },
 }
 
 export const functions: Layer = {
-  regular: [
-    ['F12', 'F7', 'F8', 'F9', 'PrtScr'],
-    ['F11', 'F4', 'F5', 'F6', 'ScrLo'],
-    ['F10', 'F1', 'F2', 'F3', 'Pause'],
-    ['≡', 'Spc', '⭾'],
-  ],
-  flip: [
-    ['PrtScr', 'F7', 'F8', 'F9', 'F12'],
-    ['ScrLo', 'F4', 'F5', 'F6', 'F11'],
-    ['Pause', 'F1', 'F2', 'F3', 'F10'],
-    ['≡', 'Spc', '⭾'],
-  ],
+  regular: {
+    default: [
+      ['F12', 'F7', 'F8', 'F9', 'PrtScr'],
+      ['F11', 'F4', 'F5', 'F6', 'ScrLo'],
+      ['F10', 'F1', 'F2', 'F3', 'Pause'],
+      ['≡', 'Spc', '⭾'],
+    ],
+  },
+  flip: {
+    default: [
+      ['PrtScr', 'F7', 'F8', 'F9', 'F12'],
+      ['ScrLo', 'F4', 'F5', 'F6', 'F11'],
+      ['Pause', 'F1', 'F2', 'F3', 'F10'],
+      ['≡', 'Spc', '⭾'],
+    ],
+  },
 }
 
 export const media: Layer = {
-  regular: [
-    ['R', 'M', 'H', 'S', 'V'],
-    ['E', 'Prev', 'VUp', 'VDo', 'Next'],
-    ['◯', '1', '2', '3', '4'],
-    ['Stp', 'Ply', 'Mut'],
-  ],
-  flip: [
-    ['M', 'H', 'S', 'V', 'R'],
-    ['Prev', 'VUp', 'VDo', 'Next', 'E'],
-    ['1', '2', '3', '4', '◯'],
-    ['Mut', 'Ply', 'Stp'],
-  ],
+  regular: {
+    default: [
+      ['R', 'M', 'H', 'S', 'V'],
+      ['E', 'Prev', 'VUp', 'VDo', 'Next'],
+      ['◯', '1', '2', '3', '4'],
+      ['Stp', 'Ply', 'Mut'],
+    ],
+    invertedT: [
+      ['R', 'M', 'VUp', 'H', 'S'],
+      ['E', 'Prev', 'VDo', 'Next', 'V'],
+      ['◯', '1', '2', '3', '4'],
+      ['Stp', 'Ply', 'Mut'],
+    ],
+    vi: [
+      ['M', 'H', 'S', 'V', 'R'],
+      ['Prev', 'VDo', 'VUp', 'Next', 'E'],
+      ['1', '2', '3', '4', '◯'],
+      ['Stp', 'Ply', 'Mut'],
+    ],
+  },
+  flip: {
+    default: [
+      ['M', 'H', 'S', 'V', 'R'],
+      ['Prev', 'VUp', 'VDo', 'Next', 'E'],
+      ['1', '2', '3', '4', '◯'],
+      ['Mut', 'Ply', 'Stp'],
+    ],
+    invertedT: [
+      ['H', 'S', 'VUp', 'V', 'R'],
+      ['M', 'Prev', 'VDo', 'Next', 'E'],
+      ['1', '2', '3', '4', '◯'],
+      ['Mut', 'Ply', 'Stp'],
+    ],
+    // vi: [
+    //   ['R', 'M', 'H', 'S', 'V'],
+    //   ['E', 'Prev', 'VUp', 'VDo', 'Next'],
+    //   ['◯', '1', '2', '3', '4'],
+    //   ['Mut', 'Ply', 'Stp'],
+    // ],
+  },
 }
 
 export const nums: Layer = {
-  regular: [
-    ['[', '7', '8', '9', ']'],
-    [';', '4', '5', '6', '='],
-    ['`', '1', '2', '3', '\\'],
-    ['.', '0', '-'],
-  ],
-  flip: [
-    ['[', '7', '8', '9', ']'],
-    ['=', '4', '5', '6', ';'],
-    ['\\', '1', '2', '3', '`'],
-    ['-', '0', '.'],
-  ],
+  regular: {
+    default: [
+      ['[', '7', '8', '9', ']'],
+      [';', '4', '5', '6', '='],
+      ['`', '1', '2', '3', '\\'],
+      ['.', '0', '-'],
+    ],
+  },
+  flip: {
+    default: [
+      ['[', '7', '8', '9', ']'],
+      ['=', '4', '5', '6', ';'],
+      ['\\', '1', '2', '3', '`'],
+      ['-', '0', '.'],
+    ],
+  },
 }
 
 export const navigation: Layer = {
-  regular: [
-    ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
-    ['CapL', '⯇', '▲', '▼', '⯈'],
-    ['Ins', 'Hom', 'PgD', 'PgU', 'End'],
-    ['⌦', '⌫', '↵'],
-  ],
-  flip: [
-    ['Hom', 'PgD', 'PgU', 'End', 'Ins'],
-    ['⯇', '▲', '▼', '⯈', 'CapL'],
-    ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
-    ['⌦', '⌫', '↵'],
-  ],
+  regular: {
+    default: [
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['CapL', '⯇', '▲', '▼', '⯈'],
+      ['Ins', 'Hom', 'PgD', 'PgU', 'End'],
+      ['⌦', '⌫', '↵'],
+    ],
+    invertedT: [
+      ['Ins', 'Hom', '▲', 'End', 'PgU'],
+      ['CapL', '⯇', '▼', '⯈', 'PgD'],
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['⌦', '⌫', '↵'],
+    ],
+    vi: [
+      ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
+      ['⯇', '▼', '▲', '⯈', 'CapL'],
+      ['Hom', 'PgD', 'PgU', 'End', 'Ins'],
+      ['⌦', '⌫', '↵'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Hom', 'PgD', 'PgU', 'End', 'Ins'],
+      ['⯇', '▲', '▼', '⯈', 'CapL'],
+      ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+      ['⌦', '⌫', '↵'],
+    ],
+    invertedT: [
+      ['PgU', 'Hom', '▲', 'End', 'Ins'],
+      ['PgD', '⯇', '▼', '⯈', 'CapL'],
+      ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+      ['⌦', '⌫', '↵'],
+    ],
+    // vi: [
+    //   ['Hom', 'PgD', 'PgU', 'End', 'Ins'],
+    //   ['CapL', '⯇', '▲', '▼', '⯈'],
+    //   ['Und', 'Cut', 'Cpy', 'Pst', 'Rdo'],
+    //   ['⌦', '⌫', '↵'],
+    // ],
+  },
 }
 
 const colorBlack = 'text-[#000000]'
@@ -401,61 +584,77 @@ export const colorsRight = {
 }
 
 export const modLayerLeft: Layer = {
-  regular: [
-    ['Boot', 'Tap', 'Extra', 'Base', ''],
-    ['Super', 'Alt', 'Ctrl', 'Shift', ''],
-    ['Button', 'RAlt', 'Opp', 'Cur', ''],
-    ['Media', 'Nav', 'Mouse'],
-  ],
-  flip: [
-    ['Boot', 'Tap', 'Extra', 'Base', ''],
-    ['Super', 'Alt', 'Ctrl', 'Shift', ''],
-    ['Button', 'RAlt', 'Opp', 'Cur', ''],
-    ['Fun', 'Num', 'Sym'],
-  ],
+  regular: {
+    default: [
+      ['Boot', 'Tap', 'Extra', 'Base', ''],
+      ['Super', 'Alt', 'Ctrl', 'Shift', ''],
+      ['Button', 'RAlt', 'Opp', 'Cur', ''],
+      ['Media', 'Nav', 'Mouse'],
+    ],
+  },
+  flip: {
+    default: [
+      ['Boot', 'Tap', 'Extra', 'Base', ''],
+      ['Super', 'Alt', 'Ctrl', 'Shift', ''],
+      ['Button', 'RAlt', 'Opp', 'Cur', ''],
+      ['Fun', 'Num', 'Sym'],
+    ],
+  },
 }
 
 export const modLayerRight: Layer = {
-  regular: [
-    ['', 'Base', 'Extra', 'Tap', 'Boot'],
-    ['', 'Shift', 'Ctrl', 'Alt', 'Super'],
-    ['', 'Cur', 'Opp', 'RAlt', 'Button'],
-    ['Sym', 'Num', 'Fun'],
-  ],
-  flip: [
-    ['', 'Base', 'Extra', 'Tap', 'Boot'],
-    ['', 'Shift', 'Ctrl', 'Alt', 'Super'],
-    ['', 'Cur', 'Opp', 'RAlt', 'Button'],
-    ['Mouse', 'Nav', 'Media'],
-  ],
+  regular: {
+    default: [
+      ['', 'Base', 'Extra', 'Tap', 'Boot'],
+      ['', 'Shift', 'Ctrl', 'Alt', 'Super'],
+      ['', 'Cur', 'Opp', 'RAlt', 'Button'],
+      ['Sym', 'Num', 'Fun'],
+    ],
+  },
+  flip: {
+    default: [
+      ['', 'Base', 'Extra', 'Tap', 'Boot'],
+      ['', 'Shift', 'Ctrl', 'Alt', 'Super'],
+      ['', 'Cur', 'Opp', 'RAlt', 'Button'],
+      ['Mouse', 'Nav', 'Media'],
+    ],
+  },
 }
 
 export const modLayerLeftColors: Layer = {
-  regular: [
-    [colorWhite, colorWhite, colorWhite, colorWhite, ''],
-    [colorBlack, colorBlack, colorBlack, colorBlack, ''],
-    [colorGrey, colorBlack, colorWhite, colorWhite, ''],
-    [colorPink, colorCyan, colorYellow],
-  ],
-  flip: [
-    [colorWhite, colorWhite, colorWhite, colorWhite, ''],
-    [colorBlack, colorBlack, colorBlack, colorBlack, ''],
-    [colorGrey, colorBlack, colorWhite, colorWhite, ''],
-    [colorRed, colorBlue, colorGreen],
-  ],
+  regular: {
+    default: [
+      [colorWhite, colorWhite, colorWhite, colorWhite, ''],
+      [colorBlack, colorBlack, colorBlack, colorBlack, ''],
+      [colorGrey, colorBlack, colorWhite, colorWhite, ''],
+      [colorPink, colorCyan, colorYellow],
+    ],
+  },
+  flip: {
+    default: [
+      [colorWhite, colorWhite, colorWhite, colorWhite, ''],
+      [colorBlack, colorBlack, colorBlack, colorBlack, ''],
+      [colorGrey, colorBlack, colorWhite, colorWhite, ''],
+      [colorRed, colorBlue, colorGreen],
+    ],
+  },
 }
 
 export const modLayerRightColors: Layer = {
-  regular: [
-    ['', colorWhite, colorWhite, colorWhite, colorWhite],
-    ['', colorBlack, colorBlack, colorBlack, colorBlack],
-    ['', colorWhite, colorWhite, colorBlack, colorGrey],
-    [colorGreen, colorBlue, colorRed],
-  ],
-  flip: [
-    ['', colorWhite, colorWhite, colorWhite, colorWhite],
-    ['', colorBlack, colorBlack, colorBlack, colorBlack],
-    ['', colorWhite, colorWhite, colorBlack, colorGrey],
-    [colorYellow, colorCyan, colorPink],
-  ],
+  regular: {
+    default: [
+      ['', colorWhite, colorWhite, colorWhite, colorWhite],
+      ['', colorBlack, colorBlack, colorBlack, colorBlack],
+      ['', colorWhite, colorWhite, colorBlack, colorGrey],
+      [colorGreen, colorBlue, colorRed],
+    ],
+  },
+  flip: {
+    default: [
+      ['', colorWhite, colorWhite, colorWhite, colorWhite],
+      ['', colorBlack, colorBlack, colorBlack, colorBlack],
+      ['', colorWhite, colorWhite, colorBlack, colorGrey],
+      [colorYellow, colorCyan, colorPink],
+    ],
+  },
 }
