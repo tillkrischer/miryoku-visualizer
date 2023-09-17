@@ -82,7 +82,7 @@ export const alphasAzertyLeft: Layer = {
       ['A', 'Z', 'E', 'R', 'T'],
       ['Q', 'S', 'D', 'F', 'G'],
       ['W', 'X', 'C', 'V', 'B'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -120,7 +120,7 @@ export const alphasColemakLeft: Layer = {
       ['Q', 'W', 'F', 'P', 'G'],
       ['A', 'R', 'S', 'T', 'D'],
       ['Z', 'X', 'C', 'V', 'B'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -158,7 +158,7 @@ export const alphasColemakdhkLeft: Layer = {
       ['Q', 'W', 'F', 'P', 'B'],
       ['A', 'R', 'S', 'T', 'G'],
       ['Z', 'X', 'C', 'D', 'V'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -196,7 +196,7 @@ export const alphasDvorakLeft: Layer = {
       ["'", ',', '.', 'P', 'Y'],
       ['A', 'O', 'E', 'U', 'I'],
       ['/', 'Q', 'J', 'K', 'X'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -235,7 +235,7 @@ export const alphasHalmakLeft: Layer = {
       ['W', 'L', 'R', 'B', 'Z'],
       ['S', 'H', 'N', 'T', ','],
       ['F', 'M', 'V', 'C', '/'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -273,7 +273,7 @@ export const alphasWorkmanLeft: Layer = {
       ['Q', 'D', 'R', 'W', 'B'],
       ['A', 'S', 'H', 'T', 'G'],
       ['Z', 'X', 'M', 'C', 'V'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -311,7 +311,7 @@ export const alphasQwertyLeft: Layer = {
       ['Q', 'W', 'E', 'R', 'T'],
       ['A', 'S', 'D', 'F', 'G'],
       ['Z', 'X', 'C', 'V', 'B'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -349,7 +349,7 @@ export const alphasQwertzLeft: Layer = {
       ['Q', 'W', 'E', 'R', 'T'],
       ['A', 'S', 'D', 'F', 'G'],
       ['Y', 'X', 'C', 'V', 'B'],
-      ['↵', '⌫', '⌦'],
+      ['⌦', '⌫', '↵',],
     ],
   },
 }
@@ -522,19 +522,19 @@ export const navigation: Layer = {
       ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
       ['CapL', '⯇', '▲', '▼', '⯈'],
       ['Ins', 'Hom', 'PgD', 'PgU', 'End'],
-      ['⌦', '⌫', '↵'],
+      ['↵', '⌫', '⌦'],
     ],
     invertedT: [
       ['Ins', 'Hom', '▲', 'End', 'PgU'],
       ['CapL', '⯇', '▼', '⯈', 'PgD'],
       ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
-      ['⌦', '⌫', '↵'],
+      ['↵', '⌫', '⌦'],
     ],
     vi: [
       ['Rdo', 'Pst', 'Cpy', 'Cut', 'Und'],
       ['⯇', '▼', '▲', '⯈', 'CapL'],
       ['Hom', 'PgD', 'PgU', 'End', 'Ins'],
-      ['⌦', '⌫', '↵'],
+      ['↵', '⌫', '⌦'],
     ],
   },
   flip: {
